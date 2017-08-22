@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticatedServiceHost", "src\AuthenticatedServiceHost\AuthenticatedServiceHost.csproj", "{830010F0-5A66-4288-946F-69FD7999E2FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticatedService.Client", "src\AuthenticatedService.Client\AuthenticatedService.Client.csproj", "{4F748D9E-5800-4A6A-8D11-3ACE0E7165CE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{830010F0-5A66-4288-946F-69FD7999E2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{830010F0-5A66-4288-946F-69FD7999E2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{830010F0-5A66-4288-946F-69FD7999E2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{830010F0-5A66-4288-946F-69FD7999E2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F748D9E-5800-4A6A-8D11-3ACE0E7165CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F748D9E-5800-4A6A-8D11-3ACE0E7165CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F748D9E-5800-4A6A-8D11-3ACE0E7165CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F748D9E-5800-4A6A-8D11-3ACE0E7165CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

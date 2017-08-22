@@ -1,0 +1,13 @@
+﻿<Window x:Class="AuthenticatedService.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="btCallService" Content="Call Service" HorizontalAlignment="Left" Margin="35,24,0,0" VerticalAlignment="Top" Width="128" Height="55" Click="btCallService_Click"/>
+        <ListBox x:Name="lstIdentities" HorizontalAlignment="Left" Height="204" Margin="35,96,0,0" VerticalAlignment="Top" Width="459"/>
+
+    </Grid>
+</Window>
