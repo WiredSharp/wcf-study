@@ -47,6 +47,7 @@ namespace AuthenticatedServiceHost
         {
             try
             {
+                //https://msdn.microsoft.com/en-us/library/ff649252.aspx
                 IIdentity ctxPrimary = ServiceSecurityContext.Current?.PrimaryIdentity;
                 WindowsIdentity ctxWinId = ServiceSecurityContext.Current?.WindowsIdentity;
                 WindowsIdentity current = WindowsIdentity.GetCurrent();
