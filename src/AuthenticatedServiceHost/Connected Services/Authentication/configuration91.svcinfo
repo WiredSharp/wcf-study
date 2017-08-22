@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="l1g1Hv4odJrL6oxlx53D3iEBIKI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="91v4LNBn0lbJSxA5h88cZoqkwns=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IImpersonationService">
       <properties>
@@ -236,7 +236,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_IAuthenticatedService" contract="AuthenticatedService.IAuthenticatedService" bindingType="wsHttpBinding" address="http://localhost:9000/auth" bindingConfiguration="WSHttpBinding_IAuthenticatedService">
+    <endpoint name="WSHttpBinding_IAuthenticatedService" contract="Authentication.IAuthenticatedService" bindingType="wsHttpBinding" address="http://localhost:9000/auth" bindingConfiguration="WSHttpBinding_IAuthenticatedService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:9000/auth</serializedValue>
@@ -251,7 +251,7 @@
           <serializedValue>WSHttpBinding_IAuthenticatedService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AuthenticatedService.IAuthenticatedService</serializedValue>
+          <serializedValue>Authentication.IAuthenticatedService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -321,7 +321,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IImpersonationService" contract="AuthenticatedService.IImpersonationService" bindingType="basicHttpBinding" address="http://localhost:9000/imp" bindingConfiguration="BasicHttpBinding_IImpersonationService">
+    <endpoint name="BasicHttpBinding_IImpersonationService" contract="Authentication.IImpersonationService" bindingType="basicHttpBinding" address="http://localhost:9000/imp" bindingConfiguration="BasicHttpBinding_IImpersonationService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:9000/imp</serializedValue>
@@ -336,7 +336,7 @@
           <serializedValue>BasicHttpBinding_IImpersonationService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AuthenticatedService.IImpersonationService</serializedValue>
+          <serializedValue>Authentication.IImpersonationService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

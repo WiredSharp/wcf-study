@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Authenticated.WCF.AuthenticatedService {
+namespace AuthenticatedServiceHost.Authentication {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AuthenticatedService.IAuthenticatedService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Authentication.IAuthenticatedService")]
     public interface IAuthenticatedService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticatedService/GetUserName", ReplyAction="http://tempuri.org/IAuthenticatedService/GetUserNameResponse")]
@@ -23,12 +23,12 @@ namespace Authenticated.WCF.AuthenticatedService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAuthenticatedServiceChannel : Authenticated.WCF.AuthenticatedService.IAuthenticatedService, System.ServiceModel.IClientChannel {
+    public interface IAuthenticatedServiceChannel : AuthenticatedServiceHost.Authentication.IAuthenticatedService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AuthenticatedServiceClient : System.ServiceModel.ClientBase<Authenticated.WCF.AuthenticatedService.IAuthenticatedService>, Authenticated.WCF.AuthenticatedService.IAuthenticatedService {
+    public partial class AuthenticatedServiceClient : System.ServiceModel.ClientBase<AuthenticatedServiceHost.Authentication.IAuthenticatedService>, AuthenticatedServiceHost.Authentication.IAuthenticatedService {
         
         public AuthenticatedServiceClient() {
         }
@@ -59,7 +59,7 @@ namespace Authenticated.WCF.AuthenticatedService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AuthenticatedService.IImpersonationService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Authentication.IImpersonationService")]
     public interface IImpersonationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImpersonationService/Impersonate", ReplyAction="http://tempuri.org/IImpersonationService/ImpersonateResponse")]
@@ -70,12 +70,12 @@ namespace Authenticated.WCF.AuthenticatedService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IImpersonationServiceChannel : Authenticated.WCF.AuthenticatedService.IImpersonationService, System.ServiceModel.IClientChannel {
+    public interface IImpersonationServiceChannel : AuthenticatedServiceHost.Authentication.IImpersonationService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ImpersonationServiceClient : System.ServiceModel.ClientBase<Authenticated.WCF.AuthenticatedService.IImpersonationService>, Authenticated.WCF.AuthenticatedService.IImpersonationService {
+    public partial class ImpersonationServiceClient : System.ServiceModel.ClientBase<AuthenticatedServiceHost.Authentication.IImpersonationService>, AuthenticatedServiceHost.Authentication.IImpersonationService {
         
         public ImpersonationServiceClient() {
         }

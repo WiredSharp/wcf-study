@@ -8,6 +8,8 @@
     <Grid>
         <Button x:Name="btCallService" Content="Call Service" HorizontalAlignment="Left" Margin="35,24,0,0" VerticalAlignment="Top" Width="128" Height="55" Click="btCallService_Click"/>
         <ListBox x:Name="lstIdentities" HorizontalAlignment="Left" Height="204" Margin="35,96,0,0" VerticalAlignment="Top" Width="459"/>
+        <Button x:Name="btImpersonate" Content="Impersonate" HorizontalAlignment="Left" Margin="361,24,0,0" VerticalAlignment="Top" Width="133" Height="55" Click="btImpersonate_Click"/>
+        <Button x:Name="btImpersonateBasic" Content="Impersonate (Basic)" HorizontalAlignment="Left" Margin="197,24,0,0" VerticalAlignment="Top" Width="133" Height="55" Click="btImpersonateBasic_Click"/>
 
     </Grid>
 </Window>

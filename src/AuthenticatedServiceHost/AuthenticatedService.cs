@@ -8,7 +8,7 @@ namespace AuthenticatedServiceHost
 {
     // to continue on https://www.youtube.com/watch?v=EWBgqfhAT9U
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "AuthenticatedService" in both code and config file together.
-    public class AuthenticatedService : IAuthenticatedService
+    public class AuthenticatedService : IAuthenticatedService, IImpersonationService
     {
         private static ILogger Logger = Log.ForContext<AuthenticatedService>();
 
@@ -24,8 +24,43 @@ namespace AuthenticatedServiceHost
 
         public string[] GetUserName()
         {
-            Logger.Information("{@ServicePrimaryIdentity} {@ServiceWindowsIdentity} {@CurrentWindowsIdentity}", ServiceSecurityContext.Current.PrimaryIdentity, ServiceSecurityContext.Current.WindowsIdentity, WindowsIdentity.GetCurrent());
-            return new string[] { ServiceSecurityContext.Current.PrimaryIdentity?.Name, ServiceSecurityContext.Current.WindowsIdentity?.Name, WindowsIdentity.GetCurrent()?.Name };
+            IIdentity ctxPrimary = ServiceSecurityContext.Current?.PrimaryIdentity;
+            WindowsIdentity ctxWinId = ServiceSecurityContext.Current?.WindowsIdentity;
+            WindowsIdentity current = WindowsIdentity.GetCurrent();
+
+            Logger.Information("{0}/{1}/{2} {3}/{4}/{5} {6}/{7}/{8}"
+                , ctxPrimary?.Name
+                , ctxPrimary?.IsAuthenticated
+                , ctxPrimary?.AuthenticationType
+                , ctxWinId?.Name
+                , ctxWinId?.IsAuthenticated
+                , ctxWinId?.AuthenticationType
+                , current?.Name
+                , current?.IsAuthenticated
+                , current?.AuthenticationType);
+            return new string[] { ctxPrimary?.Name
+                , ctxWinId?.Name
+                , current?.Name };
+        }
+
+        public string[] Impersonate()
+        {
+            try
+            {
+                IIdentity ctxPrimary = ServiceSecurityContext.Current?.PrimaryIdentity;
+                WindowsIdentity ctxWinId = ServiceSecurityContext.Current?.WindowsIdentity;
+                WindowsIdentity current = WindowsIdentity.GetCurrent();
+                using (ctxWinId.Impersonate())
+                {
+                    var client = new Authentication.AuthenticatedServiceClient();
+                    return client.GetUserName();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "unable to impersonate");
+                return new string[] { ex.Message };
+            }
         }
     }
 }

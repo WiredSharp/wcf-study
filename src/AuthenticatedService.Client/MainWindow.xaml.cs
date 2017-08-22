@@ -27,8 +27,41 @@ namespace AuthenticatedService.Client
 
         private async void btCallService_Click(object sender, RoutedEventArgs e)
         {
-            var client = new Authenticated.WCF.AuthenticatedService.AuthenticatedServiceClient();
-            lstIdentities.ItemsSource = await client.GetUserNameAsync();
+            try
+            {
+                var client = new Authenticated.WCF.AuthenticatedService.AuthenticatedServiceClient();
+                lstIdentities.ItemsSource = await client.GetUserNameAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "failure", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private async void btImpersonate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var client = new Authenticated.WCF.AuthenticatedService.ImpersonationServiceClient("Impersonate");
+                lstIdentities.ItemsSource = await client.ImpersonateAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "failure", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private async void btImpersonateBasic_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var client = new Authenticated.WCF.AuthenticatedService.ImpersonationServiceClient("BasicImpersonate");
+                lstIdentities.ItemsSource = await client.ImpersonateAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "failure", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
